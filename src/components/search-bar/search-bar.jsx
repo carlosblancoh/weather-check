@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 
-export function SearchBar({onSearch}) {
+export function SearchBar({onSearch, loading}) {
     const [text, setText] = useState('');
 
     const onInputChange = event => {
@@ -11,6 +11,7 @@ export function SearchBar({onSearch}) {
     const onButtonClick = event => {
         if (onSearch) {
             onSearch(text);
+            setText('');
         }
     }
 
@@ -23,8 +24,19 @@ export function SearchBar({onSearch}) {
             />
             <button
                 onClick={onButtonClick}
+                disabled={loading || text.length === 0}
             >
-                buscar
+                {
+                    loading ? (
+                        <div>
+                            loading
+                        </div>
+                    ) : (
+                        <div>
+                            buscar
+                        </div>
+                    )
+                }
             </button>
         </div> 
     );
@@ -32,4 +44,5 @@ export function SearchBar({onSearch}) {
 
 SearchBar.propTypes = {
     onSearch : PropTypes.func,
+    loading : PropTypes.bool,
 };

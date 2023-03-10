@@ -1,15 +1,16 @@
 export class WeatherService {
 
     getWeatherByCityName(cityName) {
-        return new Promise(resolve => {
+        return new Promise((resolve, reject) => {
             setTimeout(() => {
-                resolve({
+                /*resolve({
                     cityName : cityName,
                     temperature : 14,
                     humidity : 65,
                     wind : 37,
-                });
-            }, 5000);
+                });*/
+                reject();
+            }, 1000);
         });
     }
     
