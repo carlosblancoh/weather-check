@@ -1,4 +1,4 @@
-class WeatherService {
+export class WeatherService {
 
     getWeatherByCityName(cityName) {
         return new Promise(resolve => {
