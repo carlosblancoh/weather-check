@@ -1,14 +1,17 @@
 import PropTypes from 'prop-types';
 
-export function History({items}) {
+export function History({items, onSearch}) {
     return (
         <div>
             History
             {
                 items.map((item, index) => (
-                    <div key={index}>
+                    <a 
+                        key={index}
+                        onClick={() => onSearch(item)}
+                    >
                         {item}
-                    </div>
+                    </a>
                 ))
             }
         </div> 
@@ -17,4 +20,5 @@ export function History({items}) {
 
 History.propTypes = {
     items : PropTypes.arrayOf(PropTypes.string),
+    onSearch : PropTypes.func,
 };

@@ -58,6 +58,7 @@ export function MainPage(props) {
             {previousSearches.length > 0 && (
                 <History
                     items={previousSearches}
+                    onSearch={onSearch}
                 />
             )}
         </div> 

@@ -16,13 +16,14 @@ export function SearchBar({onSearch, loading}) {
     }
 
     return (
-        <div>
+        <form onSubmit={() => false}>
             <input 
                 type='text'
                 value={text}
                 onChange={onInputChange}
             />
             <button
+                type='submit'
                 onClick={onButtonClick}
                 disabled={loading || text.length === 0}
             >
@@ -38,7 +39,7 @@ export function SearchBar({onSearch, loading}) {
                     )
                 }
             </button>
-        </div> 
+        </form> 
     );
 }
 
