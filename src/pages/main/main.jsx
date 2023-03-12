@@ -11,6 +11,7 @@ export function MainPage(props) {
     const [previousSearches, setPreviousSearches] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(false);
+    const [loaded, setLoaded] = useState(false);
 
     const onSearch = async cityName => {
         setIsLoading(true);
@@ -18,12 +19,14 @@ export function MainPage(props) {
             const weather = await weatherService.getWeatherByCityName(cityName);
             setResults(weather);
             setError(false);
-        } catch {
+        } catch(error) {
+            console.error(error);
             setError(true);
             setResults(undefined);
         } finally {
             setPreviousSearches(oldValue => [cityName, ...oldValue].slice(0, 5));
             setIsLoading(false);
+            setLoaded(true);
         }
     };
 
@@ -34,6 +37,11 @@ export function MainPage(props) {
                 loading={isLoading}
                 onSearch={onSearch}
             />
+            {loaded && !error && !results && (
+                <div>
+                    ¡Lo sentimos! No hemos encontrado la localización indicada. ¡Prueba a realizar otra búsqueda!
+                </div>
+            )}
             {results && (
                 <WeatherCard
                     cityName={results.cityName}
