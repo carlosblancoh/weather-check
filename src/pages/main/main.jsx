@@ -4,11 +4,13 @@ import { History } from "../../components/history/history";
 import { Logo } from "../../components/logo/logo";
 import { SearchBar } from "../../components/search-bar/search-bar";
 import { WeatherCard } from "../../components/weather-card/weather-card";
+import { HistoryService } from '../../services/history';
 
 export function MainPage(props) {
     const weatherService = new WeatherService();
+    const historyService = new HistoryService();
     const [results, setResults] = useState(undefined);
-    const [previousSearches, setPreviousSearches] = useState([]);
+    const [previousSearches, setPreviousSearches] = useState(historyService.load());
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(false);
     const [loaded, setLoaded] = useState(false);
@@ -24,7 +26,8 @@ export function MainPage(props) {
             setError(true);
             setResults(undefined);
         } finally {
-            setPreviousSearches(oldValue => [cityName, ...oldValue].slice(0, 5));
+            const updatedPreviousSearches = historyService.add(cityName);
+            setPreviousSearches(updatedPreviousSearches);
             setIsLoading(false);
             setLoaded(true);
         }
