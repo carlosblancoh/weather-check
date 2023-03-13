@@ -1,0 +1,36 @@
+.historyBox {
+    margin-top: 2em;
+    background-color: #00A41A; 
+    border-radius: 0.6em;
+    padding: 0.6em 0.4em;
+    font-family: 'Akshar', sans-serif;
+    font-weight: 400;
+    font-size: 1.3em;
+    color: #FFFFFF;
+    max-width: 24rem;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.historyBoxContent {
+    border-radius: 0.5em;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.3em;
+}
+
+.historyItem {
+    background-color: #FFFFFF;
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid #00A41A;
+    font-size: 1.1rem;
+    color: #000000;
+    padding: 0.3em 1em;
+    cursor: pointer;
+}
+
+.historyItem:last-child {
+    border-bottom: none;
+}

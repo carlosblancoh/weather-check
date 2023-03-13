@@ -1,0 +1,87 @@
+.weatherCard {
+    margin-top: 2em;
+    background-color: #FFFFFF;
+    border: 1px solid #00A41A; 
+    border-radius: 0.6em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5em 1em;
+    max-width: 24rem;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 2em auto;
+}
+
+.weatherCardCity {
+    font-family: 'Akshar', sans-serif;
+    font-weight: 700;
+    color: #00A41A;
+    font-size: 3em;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.weatherCardData {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weatherCardValue {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    margin-bottom: -0.5em;
+}
+
+.weatherCardHumidityAndWind {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.weatherCardLabel {
+    font-family: 'Akshar', sans-serif;
+    font-weight: 300;
+    color: #000000;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+.weatherCardUnits {
+    font-family: 'Akshar', sans-serif;
+    font-weight: 300;
+    color: #000000;
+    opacity: 50%;
+    font-size: 1.5em;
+    line-height: 1em;
+    text-align: center;
+}
+
+.weatherCardNumber {
+    font-family: 'Akshar', sans-serif;
+    font-weight: 700;
+    color: #000000;
+    font-size: 3em;
+    line-height: 1em;
+    text-align: center;
+}
+
+.weatherCardTemperature {
+    padding: 1rem 0;
+}
+
+.weatherCardTemperature .weatherCardLabel {
+    font-size: 2em;
+}
+
+.weatherCardTemperature .weatherCardUnits {
+    font-size: 2.3em;
+}
+
+.weatherCardTemperature .weatherCardNumber {
+    font-size: 4.5em;
+}

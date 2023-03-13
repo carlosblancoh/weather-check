@@ -1,0 +1,68 @@
+html {
+    height: 100%;
+}
+
+body {
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    background-color: #E2F2E4;
+    min-height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#root {
+    width: 100%;
+}
+
+.container {
+    box-sizing: border-box;
+    margin: auto;
+    width: 100%;
+    padding: 2em;
+}
+
+.message {
+    text-align: center;
+    margin-top: 2em;
+    max-width: 24rem;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+@media (min-width: 1024px) {
+    .container {
+        display: grid;
+        grid-template-areas: 
+            'logo content'
+            'searchBar content'
+            'history content';
+        align-items: center;
+        height: 100%;
+        width: 1024px;
+    }
+
+    .logo {
+        grid-area: logo;
+    }
+
+    .searchBar {
+        grid-area: searchBar;
+    }
+
+    .historyBox {
+        grid-area: history;
+    }
+
+    .message {
+        grid-area: content;
+        margin: 0 auto;
+    }
+
+    .weatherCard {
+        grid-area: content;
+    }
+}

@@ -1,15 +1,24 @@
 import PropTypes from 'prop-types';
+import './logo.css';
 
-export function Logo({onClearPage}) {
+export function Logo({onClearPage, logoBigSize}) {
     return (
-        <a 
+        <img 
             onClick={onClearPage}
+            className= {
+                logoBigSize ? (
+                    'logoBig'
+                ) : (
+                    'logo'
+                )
+            }
+            src='/logo.png'
         >
-            Logo
-        </a> 
+        </img> 
     );
 }
 
 Logo.propTypes = {
     onClearPage : PropTypes.func,
+    logoBigSize : PropTypes.bool,
 };

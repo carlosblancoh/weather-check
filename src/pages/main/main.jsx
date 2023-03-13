@@ -5,6 +5,7 @@ import { Logo } from "../../components/logo/logo";
 import { SearchBar } from "../../components/search-bar/search-bar";
 import { WeatherCard } from "../../components/weather-card/weather-card";
 import { HistoryService } from '../../services/history';
+import './main.css';
 
 export function MainPage(props) {
     const weatherService = new WeatherService();
@@ -36,12 +37,13 @@ export function MainPage(props) {
     };
 
     return (
-        <div>
+        <div className='container'>
             <Logo
                 onClearPage={() => window.location.reload()}
+                logoBigSize={!loaded}
             />
             {!loaded && (
-                <div>
+                <div className='message'>
                     ¡Bienvenido!<br/><br/>
                     Weather Check te permite conocer el tiempo que hace en tu ciudad.<br/>
                     ¡O en la que tú quieras!
@@ -50,9 +52,10 @@ export function MainPage(props) {
             <SearchBar 
                 loading={isLoading}
                 onSearch={onSearch}
+                firstSearch={!loaded}
             />
             {loaded && !error && !results && (
-                <div>
+                <div className='message'>
                     ¡Lo sentimos! No hemos encontrado la localización indicada. ¡Prueba a realizar otra búsqueda!
                 </div>
             )}
@@ -65,7 +68,7 @@ export function MainPage(props) {
                 />
             )}
             {error && (
-                <div>
+                <div className='message'>
                     Se ha producido un error al realizar la búsqueda.
                 </div>
             )}

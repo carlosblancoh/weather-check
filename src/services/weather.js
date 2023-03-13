@@ -1,5 +1,7 @@
 const API_KEY = 'e33c584f229442014f1d6670627ccea7';
 
+const M_S_TO_KM_H = 3.6;
+
 export class WeatherService {
 
     async getWeatherByCityName(cityName) {
@@ -15,7 +17,7 @@ export class WeatherService {
                 cityName : data.name,
                 temperature : data.main.temp,
                 humidity : data.main.humidity,
-                wind : data.wind.speed,
+                wind : data.wind.speed * M_S_TO_KM_H,
             };
         } else {
             return undefined;
