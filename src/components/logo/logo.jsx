@@ -1,9 +1,15 @@
-export function Logo(props) {
+import PropTypes from 'prop-types';
+
+export function Logo({onClearPage}) {
     return (
-        <div>
+        <a 
+            onClick={onClearPage}
+        >
             Logo
-        </div> 
+        </a> 
     );
 }
 
-Logo.propTypes = {};
+Logo.propTypes = {
+    onClearPage : PropTypes.func,
+};

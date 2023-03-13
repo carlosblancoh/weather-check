@@ -21,13 +21,15 @@ export function MainPage(props) {
             const weather = await weatherService.getWeatherByCityName(cityName);
             setResults(weather);
             setError(false);
+            if (weather) {
+                const updatedPreviousSearches = historyService.add(cityName);
+                setPreviousSearches(updatedPreviousSearches);
+            }
         } catch(error) {
             console.error(error);
             setError(true);
             setResults(undefined);
         } finally {
-            const updatedPreviousSearches = historyService.add(cityName);
-            setPreviousSearches(updatedPreviousSearches);
             setIsLoading(false);
             setLoaded(true);
         }
@@ -35,7 +37,16 @@ export function MainPage(props) {
 
     return (
         <div>
-            <Logo/>
+            <Logo
+                onClearPage={() => window.location.reload()}
+            />
+            {!loaded && (
+                <div>
+                    ¡Bienvenido!<br/><br/>
+                    Weather Check te permite conocer el tiempo que hace en tu ciudad.<br/>
+                    ¡O en la que tú quieras!
+                </div>
+            )}
             <SearchBar 
                 loading={isLoading}
                 onSearch={onSearch}

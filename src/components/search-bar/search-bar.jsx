@@ -21,6 +21,7 @@ export function SearchBar({onSearch, loading}) {
                 type='text'
                 value={text}
                 onChange={onInputChange}
+                placeholder='¿Qué ciudad quieres consultar?'
             />
             <button
                 type='submit'
