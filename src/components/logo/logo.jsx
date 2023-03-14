@@ -13,8 +13,8 @@ export function Logo({onClearPage, logoBigSize}) {
                 )
             }
             src='/logo.png'
-        >
-        </img> 
+            alt='logo'
+        />
     );
 }
 

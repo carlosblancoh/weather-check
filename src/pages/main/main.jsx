@@ -56,8 +56,16 @@ export function MainPage(props) {
             />
             {loaded && !error && !results && (
                 <div className='message'>
-                    ¡Lo sentimos! No hemos encontrado la localización indicada. ¡Prueba a realizar otra búsqueda!
+                    <img 
+                        src='/sadFace.png'
+                        className='errorImage'
+                        alt='error'
+                    />
+                    <div>
+                        ¡Lo sentimos! No hemos encontrado la localización indicada. ¡Prueba a realizar otra búsqueda!
+                    </div>
                 </div>
+                
             )}
             {results && (
                 <WeatherCard
@@ -69,7 +77,14 @@ export function MainPage(props) {
             )}
             {error && (
                 <div className='message'>
-                    Se ha producido un error al realizar la búsqueda.
+                    <img 
+                        src='/sadFace.png'
+                        className='errorImage'
+                        alt='error'
+                    />
+                    <div>
+                        Se ha producido un error al realizar la búsqueda.
+                    </div>
                 </div>
             )}
             {previousSearches.length > 0 && (

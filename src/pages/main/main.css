@@ -33,6 +33,10 @@ body {
     width: 100%;
 }
 
+.errorImage {
+    margin: 1em;
+}
+
 @media (min-width: 1024px) {
     .container {
         display: grid;

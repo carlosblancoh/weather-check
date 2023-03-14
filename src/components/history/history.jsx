@@ -8,13 +8,13 @@ export function History({items, onSearch}) {
             <div className='historyBoxContent'>
                 {
                     items.map((item, index) => (
-                        <a 
+                        <div 
                             key={index}
                             onClick={() => onSearch(item)}
                             className='historyItem'
                         >
                             {item}
-                        </a>
+                        </div>
                     ))
                 }
             </div>

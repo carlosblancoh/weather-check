@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import { Spinner } from '../spinner/spinner';
 import './search-bar.css';
 
 export function SearchBar({onSearch, loading, firstSearch}) {
@@ -43,15 +44,13 @@ export function SearchBar({onSearch, loading, firstSearch}) {
             >
                 {
                     loading ? (
-                        <div>
-                            loading
-                        </div>
+                        <Spinner/>
                     ) : (
                         <img
                             className='searchIcon'
                             src='/searchIcon.png'
-                        >
-                        </img>
+                            alt='search'
+                        />
                     )
                 }
             </button>
