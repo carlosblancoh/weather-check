@@ -3,18 +3,21 @@ import './logo.css';
 
 export function Logo({onClearPage, logoBigSize}) {
     return (
-        <img 
-            onClick={onClearPage}
-            className= {
-                logoBigSize ? (
-                    'logoBig'
-                ) : (
-                    'logo'
-                )
-            }
-            src='/logo.png'
-            alt='logo'
-        />
+        <div className='logoWrapper'>
+            <img 
+                onClick={onClearPage}
+                className= {
+                    logoBigSize ? (
+                        'logoBig'
+                    ) : (
+                        'logo'
+                    )
+                }
+                src='/logo.png'
+                alt='logo'
+            />
+        </div>
+        
     );
 }
 

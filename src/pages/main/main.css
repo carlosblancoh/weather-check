@@ -31,6 +31,8 @@ body {
     max-width: 24rem;
     box-sizing: border-box;
     width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .errorImage {
@@ -44,12 +46,13 @@ body {
             'logo content'
             'searchBar content'
             'history content';
+        grid-template-columns: 1fr 1fr;
         align-items: center;
         height: 100%;
         width: 1024px;
     }
 
-    .logo {
+    .logoWrapper {
         grid-area: logo;
     }
 

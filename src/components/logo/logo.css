@@ -1,3 +1,11 @@
+.logoWrapper {
+    box-sizing: border-box;
+    max-width: 24rem;
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+}
+
 .logoBig {
     width: 16em;
 }
